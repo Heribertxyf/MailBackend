@@ -3,8 +3,8 @@
 start_()
 {
     cd $(pwd);
-    nohup gunicorn ops_mail.wsgi:application -b 0.0.0.0:8000 -t 60  -w 2  > /data/ops_mail/logs/ops_mail.log 2>&1 &
-    tail -f /data/ops_mail/logs/ops_mail.log
+    nohup gunicorn ops_mail.wsgi:application -b 0.0.0.0:8002 -t 60  -w 2  > /data/code/ops_mail/logs/ops_mail.log 2>&1 &
+    tail -f /data/code/ops_mail/logs/ops_mail.log
 }
 
 

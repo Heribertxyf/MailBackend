@@ -4,10 +4,8 @@ import os
 
 
 class Config:
-    MAIL_HOST = "mail.yun-idc.com"
-    SENDER = 'cloud.alarm@capitalonline.net'
-    INTERVAL = 15
-    HOUR_INTERVAL = 1440
+    MAIL_HOST = "smtp.office365.com"
+    MAIL_PORT = 587
 
     def __init__(self):
         pass
@@ -16,41 +14,30 @@ class Config:
 class DevConfig(Config):
     DATABASE = {
         'name':     'cds_mail',
-        'user':     'root',
-        'password': '123456',
+        'user':     'api',
+        'password': 'apicdscloud',
         'host':     '127.0.0.1',
         'port':     '3306',
     }
-    SITE_DOMAIN = 'http://10.128.100.183:8003'
-    TSDB_DOMAIN = 'http://10.128.100.161:4242'
-    GIC_CLIENT_DOMAIN = 'http://10.13.102.182:8000'
 
 
 class ProConfig(Config):
     DATABASE = {
         'name':     'cds_mail',
-        'user':     'prada',
-        'password': 'lovecapitalpradaqwerfdsa',
-        'host':     '10.128.100.45',
-        'port':     '6666',
+        'user':     'api',
+        'password': 'apicdscloud',
+        'host':     '127.0.0.1',
+        'port':     '3306',
     }
-    SITE_DOMAIN = 'http://10.128.100.188:8003'
-    TSDB_DOMAIN = 'http://10.128.100.161:4242'
-    GIC_CLIENT_DOMAIN = 'http://10.13.102.182:8000'
-
 
 class TestingConfig(Config):
     DATABASE = {
         'name':     'cds_mail',
-        'user':     'root',
-        'password': 'cds-cloud@2018',
-        'host':     '10.128.100.190',
+        'user':     'api',
+        'password': 'apicdscloud',
+        'host':     '127.0.0.1',
         'port':     '3306',
     }
-    SITE_DOMAIN = 'http://10.128.100.195:8003'
-    TSDB_DOMAIN = 'http://10.128.100.161:4242'
-    GIC_CLIENT_DOMAIN = 'http://10.13.102.182:8000'
-
 
 ENV_CONFIG = {
     'test': TestingConfig,
